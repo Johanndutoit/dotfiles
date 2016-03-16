@@ -93,3 +93,19 @@ nnoremap <CR> o<Esc>
 autocmd CmdwinEnter * nnoremap <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <CR> <CR>
 
+" update nerdtree settings
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+" start when opened and no files are passed
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" start nerd tree with cntrl-n
+map <C-n> :NERDTreeToggle<CR>
+
+" close nerd tree if that's the only one left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+execute pathogen#infect()
+call pathogen#helptags()
