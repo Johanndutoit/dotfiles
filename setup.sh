@@ -9,5 +9,7 @@ curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | s
 apt-vim init || true
 
 # install nerdtree
-cd ~/.vim/bundle
-git clone https://github.com/scrooloose/nerdtree.git
+git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
+git clone git://github.com/digitaltoad/vim-pug.git ~/.vim/bundle/vim-pug
+
